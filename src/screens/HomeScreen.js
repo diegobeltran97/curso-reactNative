@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   spaceButton: {
-    margin: '25'
+    margin: 25
   }
 });
 
