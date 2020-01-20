@@ -29,6 +29,12 @@ const HomeScreen = ( { navigation }) => {
         onPress={() => navigation.navigate('CounterScreen')} 
         title="Go to Counter"
         /> 
+
+        <Button 
+         style={styles.spaceButton}
+        onPress={() => navigation.navigate('ColorScreen')} 
+        title="Go to Colors"
+        /> 
        
     </View>
   );
@@ -41,7 +47,7 @@ const styles = StyleSheet.create({
     fontSize: 30
   },
   spaceButton: {
-    margin: 25
+    margin: 40
   }
 });
 
