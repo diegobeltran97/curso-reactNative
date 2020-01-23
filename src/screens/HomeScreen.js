@@ -35,11 +35,16 @@ const HomeScreen = ( { navigation }) => {
         onPress={() => navigation.navigate('ColorScreen')} 
         title="Go to Colors"
         /> 
+
+
+      <Button 
+         style={styles.spaceButton}
+        onPress={() => navigation.navigate('SquareScreen')} 
+        title="Go to SquareScrenn"
+        /> 
        
     </View>
   );
-  
- 
 };
 
 const styles = StyleSheet.create({
