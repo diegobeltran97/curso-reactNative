@@ -1,20 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState , useReducer} from 'react';
 import { Text, StyleSheet , View, Button, TouchableOpacity } from 'react-native';
 
 
+const reducer = ( state, action ) => {
+   
+    switch (action.Change) {
+        case 'increase':
+            return  { ...state, counter: state.counter + 1};
+
+        case 'decrease':
+            return  { ...state, counter: state.counter - 1};
+    
+        default:
+            return state;
+            break;
+    }
+}
+
 const Counter = () => {
-    const [ counter, changeCOunter ] = useState(0);
+    /* const [ counter, changeCOunter ] = useState(0); */
+    
+
+    const [ states, runMyReducer] = useReducer( reducer, {  counter: 0 })
+    const { counter } = states;
 
     return <View>
         <Button title="Increase" onPress={ () => {
             //Don`t do this
             //counter ++
-            changeCOunter(counter + 1);
+            runMyReducer({ Change: 'increase'  });
+            console.log('hey');
         } } />
         <Button title="Decrease" onPress={ () => {
             //Don`t do this
             //counter ++
-        changeCOunter(counter - 1) }} />
+            runMyReducer( { Change: 'decrease'} );
+        }} 
+         />
         <Text>Current Count: { counter }</Text>
     </View>
 };
