@@ -3,6 +3,8 @@ import { Text, StyleSheet , View, Button, TouchableOpacity } from 'react-native'
 
 
 const reducer = ( state, action ) => {
+    //state == { count: number}
+    // action == { type: 'increment' or "decrement" , payload: 1}
    
     switch (action.Change) {
         case 'increase':
